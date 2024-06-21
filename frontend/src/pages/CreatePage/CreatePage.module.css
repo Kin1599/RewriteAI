@@ -1,0 +1,51 @@
+.createPage{
+    margin: 36px 0 150px 0;
+}
+
+.createPage__title{
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 36px;
+}
+
+.createPage__inputs > *{
+    margin-bottom: 36px;
+}
+
+.createPageInputs__settings{
+    display: flex;
+    gap: 20px;
+}
+
+.createPageInputsSettings__countSymbol{
+    width: 409px;
+}
+
+.countSymbol__title{
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    padding-left: 16px;
+    margin-bottom: 16px;
+}
+
+.createPage__response{
+    margin-top: 98px;
+    width: 100%;
+}
+
+.createPage__response > *:not(:last-child){
+    margin-bottom: 36px;
+}
+
+.response__title{
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+.response__btns{
+    display: flex;
+    gap: 20px;
+}

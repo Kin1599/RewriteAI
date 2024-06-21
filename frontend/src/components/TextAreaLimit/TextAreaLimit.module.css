@@ -1,0 +1,30 @@
+
+.textAreaLimit, .textAreaLimit__textArea{
+    position: relative;
+    width: 100%;
+    vertical-align: top
+}
+
+.textAreaLimit__limit{
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    z-index: 2;
+}
+
+.textAreaLimit__textArea{
+    border-radius: 15px;
+    padding: 28px;
+    resize: none;
+    border: 1px solid #CCCCCC;
+    font-family: "Steppe";
+    outline: none;
+}
+
+.textAreaLimit__textArea::placeholder{
+    color: #CCCCCC;
+}
+
+.textAreaLimit__textArea:focus{
+    border: 1px solid #1D1D1D;
+}

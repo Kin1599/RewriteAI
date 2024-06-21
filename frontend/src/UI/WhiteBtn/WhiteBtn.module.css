@@ -1,0 +1,17 @@
+.whiteBtn{
+    width: 100%;
+}
+
+.whiteBtn > button{
+    height: 51px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #CCCCCC;
+    color: #000;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.whiteBtn > button:hover{
+    background-color: #F4F4F4;
+}

@@ -1,0 +1,14 @@
+.inputWithTitle{
+    width: 100%;
+}
+
+.inputWithTitle > *:not(:last-child){
+    margin-bottom: 16px;
+}
+
+.inputWithTitle__title{
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+    padding-left: 16px;
+}

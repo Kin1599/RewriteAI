@@ -1,0 +1,43 @@
+
+@font-face {
+    font-family: "Steppe Book";
+    src: url("../../assets/fonts/Steppe-Book.ttf");
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 150px;
+}
+
+.header__left{
+    display: flex;
+    justify-content: space-between;
+    gap: 150px;
+}
+
+.header__logo{
+    font-size: 32px;
+    font-family: "Steppe Book";
+}
+
+.header__menu{
+    display: flex;  
+    gap: 52px;
+    align-items: center;
+}
+
+.menu__item_active{
+    font-weight: 800;
+}
+
+.header__profile{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.profile__name{
+    font-weight: 600;
+}

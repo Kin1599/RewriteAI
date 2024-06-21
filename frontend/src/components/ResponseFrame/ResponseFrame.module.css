@@ -1,0 +1,11 @@
+.responseFrame__textarea{
+    padding: 28px;
+    border-radius: 15px;
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    color: #000;
+    font-size: 17px;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+}
