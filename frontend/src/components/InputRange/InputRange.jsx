@@ -1,18 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cl from "./InputRange.module.css"
 
-function InputRange({title, minValue, maxValue}) {
-    const [currentValue, setCurrentValue] = useState(0);
+function InputRange({title, minValue, maxValue, setPowerRewrite, powerRewrite}) {
   return (
     <div className={cl.inputRange}>
-        <div className={cl.inputRange__title}>{title}: {currentValue}/{maxValue}</div>
+        <div className={cl.inputRange__title}>{title}: {powerRewrite}/{maxValue}</div>
         <input 
             className={cl.inputRange__range}
             type="range" 
             min={minValue} 
             max={maxValue}
-            value={currentValue}
-            onChange={(e) => setCurrentValue(e.target.value)}
+            value={powerRewrite}
+            onChange={(e) => setPowerRewrite(e.target.value)}
         />
     </div>
   )

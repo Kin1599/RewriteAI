@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import cl from "./TextAreaLimit.module.css"
 
-function TextAreaLimit({maxLength, placeHolder, height}) {
-    const [textValue, setTextValue] = useState('');
-    const [currentLength, setCurrentLength] = useState(0);
+function TextAreaLimit({maxLength, placeHolder, height, text, setText, read}) {
+    const [currentLength, setCurrentLength] = useState();
     const textareaRef = useRef(null);
 
     useEffect(() => {
@@ -11,11 +10,11 @@ function TextAreaLimit({maxLength, placeHolder, height}) {
         textareaRef.current.style.height = "auto";
         textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
       }
-    }, [textValue])
+    }, [text])
 
     const handleChange = (e) => {
       setCurrentLength(e.target.value.length);
-      setTextValue(e.target.value);
+      setText(e.target.value);
     }
 
   return (
@@ -25,7 +24,7 @@ function TextAreaLimit({maxLength, placeHolder, height}) {
             <div className={cl.textAreaLimit__limit}>{currentLength}/{maxLength}</div>
           )
         }
-        <textArea 
+        <textarea 
           ref={textareaRef}
           className={cl.textAreaLimit__textArea} 
           type="text" 
@@ -33,7 +32,8 @@ function TextAreaLimit({maxLength, placeHolder, height}) {
           placeholder={placeHolder}
           style={{ height: height ? height : '75px' }}
           onChange={(e) => handleChange(e)}
-          value={textValue}
+          value={text}
+          readOnly={read ? true : false}
         />
     </div>
   )
