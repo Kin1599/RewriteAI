@@ -28,6 +28,10 @@
     align-items: center;
 }
 
+.menu__item{
+    color: #1D1D1D;
+}
+
 .menu__item_active{
     font-weight: 800;
 }

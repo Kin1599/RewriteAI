@@ -25,7 +25,7 @@ function CreatePage({createText}) {
         <div className={cl.createPageInputs__settings}>
           <div className={cl.createPageInputsSettings__countSymbol}>
             <div className={cl.countSymbol__title}>Количество символов в строке</div>
-            <InputNumber value={2000}/>
+            <InputNumber value={2000} height="88px"/>
           </div>
           <InputWithTitle
             title="Тональность текста"

@@ -1,0 +1,19 @@
+.inputRange{
+    width: 250px;
+}
+
+.inputRange > *:not(:last-child){
+    margin-bottom: 14px;
+}
+
+.inputRange__title{
+    color: #000;
+}
+
+.inputRange__range{
+    appearance: none;
+    width: 100%;
+    background: #E2E2E2;
+    border-radius: 30px;
+    height: 4px;
+}

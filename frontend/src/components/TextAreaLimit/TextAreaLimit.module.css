@@ -2,7 +2,7 @@
 .textAreaLimit, .textAreaLimit__textArea{
     position: relative;
     width: 100%;
-    vertical-align: top
+    vertical-align: top;
 }
 
 .textAreaLimit__limit{
@@ -10,6 +10,7 @@
     top: 28px;
     right: 28px;
     z-index: 2;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .textAreaLimit__textArea{
@@ -19,6 +20,7 @@
     border: 1px solid #CCCCCC;
     font-family: "Steppe";
     outline: none;
+    overflow: hidden;
 }
 
 .textAreaLimit__textArea::placeholder{
