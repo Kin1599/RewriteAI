@@ -1,7 +1,8 @@
 from fastapi import FastAPI # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
 from fastapi_models import *
-import model
+from dir.rewriting import mlGOVNO
+from dir.model import AI_or_Human
 
 app = FastAPI()
 
@@ -13,8 +14,10 @@ app.add_middleware(
     allow_headers=["*"],  # Разрешаем использование всех заголовков
 )
 
-@app.post("/upload_text")
-async def upload_text(data: UploadTextData):
-    answers = model.AI_or_Human(data.text)
+
+@app.post("/process_text")
+async def process_text(text: Text, user_input: Text) -> Result:
+    answers = AI_or_Human(text.text)
+    out_text = mlGOVNO(user_input)
     #print(f"Human is {answers[0][0]}%\nAI is {answers[0][1]}%")
-    return Result(human = answers[0][0], ai = answers[0][1])
+    return Result(human = answers[0][0], ai = answers[0][1], text = out_text)
