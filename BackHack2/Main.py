@@ -15,8 +15,8 @@ class Result(BaseModel):
 
 
 @app.post("/process_text")
-async def process_text(text: Text, user_input: Text) -> Result:
+async def process_text(text: Text) -> Result:
     answers = AI_or_Human(text.text)
-    out_text = mlGOVNO(user_input)
+    out_text = mlGOVNO(text.text)
     #print(f"Human is {answers[0][0]}%\nAI is {answers[0][1]}%")
     return Result(human = answers[0][0], ai = answers[0][1], text = out_text)
