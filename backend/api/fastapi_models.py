@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel # type: ignore
 
 class UploadTextData(BaseModel):
     text: str
@@ -7,3 +7,4 @@ class UploadTextData(BaseModel):
 class Result(BaseModel):
     human: float
     ai: float
+    text: str

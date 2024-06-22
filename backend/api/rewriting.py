@@ -1,10 +1,10 @@
 import requests
 import uuid
 import base64
-from langchain.chat_models.gigachat import GigaChat
+from langchain_community.chat_models.gigachat import GigaChat
 
 def get_access_token(client_id, client_secret):
-    authorization_data = base64.b64encode(f"{client_id}:{client_secret}".encode())
+    authorization_data = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode('utf-8')
     rquid = str(uuid.uuid4())
 
     headers = {
@@ -20,8 +20,6 @@ def get_access_token(client_id, client_secret):
 
     return response.json().get('access_token')
 
-
-
 def mlGOVNO(user_input):
     client_id = '6235a282-7acc-4c96-af75-f16aeb5e44f1'
     client_secret = 'NWNlYmUyMjktYTZjMC00MTUyLTlmZmEtMDU5NzEzYTE3MmIwOjYyMzVhMjgyLTdhY2MtNGM5Ni1hZjc1LWYxNmFlYjVlNDRmMQ=='
@@ -30,10 +28,9 @@ def mlGOVNO(user_input):
 
     chat = GigaChat(credentials=token, verify_ssl_certs=False)
     messages = [
-    {"role": "system", "content": "You are a helpful assistant."}
+        {"role": "system", "content": "Вы - полезный ассистент."}
     ]
 
-    user_input = input("User: ")
     messages.append({"role": "user", "content": user_input})
     response = chat(messages)
-    print("Bot: ", response.content)
+    print("Бот: ", response.content)
