@@ -1,6 +1,7 @@
 from fastapi import FastAPI # type: ignore
 from fastapi.middleware.cors import CORSMiddleware # type: ignore
 from fastapi_models import *
+import model
 
 app = FastAPI()
 
@@ -13,9 +14,7 @@ app.add_middleware(
 )
 
 @app.post("/upload_text")
-def upload_text(data: UploadTextData):
-    json_data = {
-        "text": data.text,
-        "power": data.power
-    }
-    return json_data
+async def upload_text(data: UploadTextData):
+    answers = model.AI_or_Human(data.text)
+    #print(f"Human is {answers[0][0]}%\nAI is {answers[0][1]}%")
+    return Result(human = answers[0][0], ai = answers[0][1])

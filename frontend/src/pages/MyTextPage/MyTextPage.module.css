@@ -1,0 +1,11 @@
+.myTextPage{
+    margin-top: 36px;
+    margin-bottom: 150px;
+}
+
+.myTextPage__title{
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 52px;
+}

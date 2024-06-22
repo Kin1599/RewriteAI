@@ -4,16 +4,24 @@ import TextAreaLimit from '../../components/TextAreaLimit/TextAreaLimit'
 import '../../app/App.css'
 import InputRange from '../../components/InputRange/InputRange'
 import BlueBtn from '../../UI/BlueBtn/BlueBtn'
+import ProgressBar from '../../components/ProgressBar/ProgressBar'
 import Service from '../../api/Service'
 
 function RewritePage() {
   const [originalText, setOriginalText] = useState();
   const [rewriteText, setRewriteText] = useState();
   const [powerRewrite, setPowerRewrite] = useState(0);
+  const [percents] = useState(
+  // {
+  //   originalText: 85,
+  //   rewriteText: 12
+  // }
+  )
 
   const uploadServer = async () => {
     const response = await Service.postData(originalText, powerRewrite);
-    setRewriteText(response.text);
+    console.log(response);
+    // setRewriteText(response.text);
   }
 
   return ( 
@@ -41,6 +49,19 @@ function RewritePage() {
                 />
             </div>
         </div>
+        {
+          percents && (
+            <div className={cl.rewritePage__statistics}> 
+              <div className={cl.statistics__progressBarAI}>
+                <ProgressBar progressPercent={percents.originalText}/>
+              </div>
+              <div className={cl.statistics__progressBarHuman}>
+                <ProgressBar progressPercent={percents.rewriteText}/>
+              </div>
+            </div>
+          )
+        }
+        
         <div className={cl.rewritePage__settings}>
           <InputRange 
             title="Сила рерайта" 

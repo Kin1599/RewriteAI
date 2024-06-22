@@ -33,3 +33,14 @@
     gap: 36px;
     width: 48%;
 }
+
+.rewritePage__statistics{
+    margin-top: 20px;
+    display: flex;
+    gap: 36px;
+}
+
+
+.statistics__progressBarAI, .statistics__progressBarHuman{
+    width: 100%;
+}
