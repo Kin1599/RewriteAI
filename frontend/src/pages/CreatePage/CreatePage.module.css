@@ -1,5 +1,6 @@
 .createPage{
     margin: 36px 0 150px 0;
+    position: relative;
 }
 
 .createPage__title{

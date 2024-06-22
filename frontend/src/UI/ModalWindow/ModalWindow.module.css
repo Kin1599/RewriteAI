@@ -1,0 +1,61 @@
+.modalWindow{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 3;
+}
+
+.modalWindow.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalWindowContent{
+    padding: 52px;
+    background-color: white;
+    border-radius: 16px;
+    width: 604px;
+}
+
+.modalWindow__title{
+    color: #000;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+
+.modalWindow__input{
+    margin-bottom: 36px;
+}
+
+.modalWindow__btns{
+    display: flex;
+    gap: 20px;
+}
+
+.modalWindow__input > *:not(:last-child){
+    margin-bottom: 8px;
+}
+
+.modalWindowInput__title{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.modalWindowInput__input{
+    border: 1px solid #CCCCCC;
+    outline: none;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.modalWindowInput__input:focus{
+    border: 1px solid #000;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import cl from "./WhiteBtn.module.css"
 
-function WhiteBtn({children}) {
+function WhiteBtn({children, onClick}) {
   return (
-    <div className={cl.whiteBtn}>
+    <div className={cl.whiteBtn} onClick={onClick}>
         <button>{children}</button>
     </div>
   )

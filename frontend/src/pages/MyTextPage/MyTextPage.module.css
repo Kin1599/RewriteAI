@@ -9,3 +9,7 @@
     color: #000;
     margin-bottom: 52px;
 }
+
+.myTextPage__texts > *:not(:last-child){
+    margin-bottom: 20px;
+}
