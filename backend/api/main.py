@@ -6,6 +6,14 @@ from dir.model import AI_or_Human
 
 app = FastAPI()
 
+class Text(BaseModel):
+    text: str
+
+class Result(BaseModel):
+    human: float
+    ai: float
+    text: str
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Разрешаем запросы от всех источников (*), можно также указать конкретные источники ['http://localhost', 'http://localhost:3000']
