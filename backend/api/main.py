@@ -19,4 +19,4 @@ async def process_text(data: UploadTextData) -> Result:
     answers = AI_or_Human(data.text)
     out_text = mlGOVNO(data.text)
     answers2 = AI_or_Human(out_text.text)
-    return Result(original_percent = answers[0][0], rewrite_percent = answers[0][1], text = out_text)
+    return Result(original_percent = answers[0][1], rewrite_percent = answers2[0][1], text = out_text)
