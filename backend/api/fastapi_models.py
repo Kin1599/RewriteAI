@@ -5,6 +5,6 @@ class UploadTextData(BaseModel):
     power: int
 
 class Result(BaseModel):
-    human: float
-    ai: float
+    original_percent: float
+    rewrite_percent: float
     text: str
